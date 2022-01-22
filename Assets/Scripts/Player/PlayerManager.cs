@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
+    // TODO: Move Animation States in Enum
     public float speedX;
     public float jumpSpeedY;
 
@@ -22,6 +23,7 @@ public class PlayerManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         MovePlayer(speed);
+        HandleJumpAndFall();
         FlipCharacter();
 
         if (Input.GetKeyDown(KeyCode.A)) {
@@ -44,7 +46,7 @@ public class PlayerManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.W)) {
             jumping = true;
             rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            anim.SetInteger("State", 2);
+            anim.SetInteger("State", 3);
         }
     }
 
@@ -59,6 +61,17 @@ public class PlayerManager : MonoBehaviour {
 
         rb.velocity = new Vector3(speed, rb.velocity.y, 0);
 
+    }
+
+    void HandleJumpAndFall() {
+        if (jumping) {
+            // when velocity is postiv -> jumps up, if negativ he starts falling
+            if (rb.velocity.y > 0) {
+                anim.SetInteger("State", 3);
+            } else {
+                anim.SetInteger("State", 2);
+            }
+        }
     }
 
     void FlipCharacter() {
@@ -93,6 +106,6 @@ public class PlayerManager : MonoBehaviour {
     public void Jump() {
         jumping = true;
         rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
     }
 }
