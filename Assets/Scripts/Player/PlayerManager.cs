@@ -6,8 +6,9 @@ public class PlayerManager : MonoBehaviour {
     // TODO: Move Animation States in Enum
     public float speedX;
     public float jumpSpeedY;
+    public float delayBeforeDoubleJump;
 
-    bool facingRight, jumping;
+    bool facingRight, jumping, isGrounded, canDoubleJump;
     float speed;
 
     Animator anim;
@@ -43,10 +44,8 @@ public class PlayerManager : MonoBehaviour {
         }
 
         // First jumping action, speed in direction = velocity
-        if (Input.GetKeyDown(KeyCode.W)) {
-            jumping = true;
-            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            anim.SetInteger("State", 3);
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded) {
+            Jump();
         }
     }
 
@@ -86,6 +85,8 @@ public class PlayerManager : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "GROUND") {
+            isGrounded = true;
+            canDoubleJump = false;
             jumping = false; 
             anim.SetInteger("State", 0);
         }
@@ -104,8 +105,12 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void Jump() {
-        jumping = true;
-        rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-        anim.SetInteger("State", 3);
+        // handles single jump
+        if (isGrounded) {
+            jumping = true;
+            isGrounded = false;
+            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+            anim.SetInteger("State", 3);
+        }
     }
 }
