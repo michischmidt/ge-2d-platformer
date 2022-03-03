@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
-    // TODO: Move Animation States in Enum
     public float speedX;
     public float jumpSpeedY;
-    public float delayBeforeDoubleJump;
 
-    bool facingRight, jumping, isGrounded, canDoubleJump;
+    bool facingRight, jumping, isGrounded, isAttacking;
     float speed;
 
     Animator anim;
@@ -21,9 +19,13 @@ public class PlayerManager : MonoBehaviour {
         facingRight = true;
     }
 
+    public void FixedUpdate() {
+        MovePlayer(speed);                        
+    }
+
     // Update is called once per frame
     void Update() {
-        MovePlayer(speed);
+         
         HandleJumpAndFall();
         FlipCharacter();
 
@@ -51,15 +53,14 @@ public class PlayerManager : MonoBehaviour {
 
     void MovePlayer(float playerSpeed) {
         if (playerSpeed < 0 && !jumping || playerSpeed > 0 && !jumping) {
-            anim.SetInteger("State", 1); // running
+            anim.SetBool("Run", true); // running
         }
 
         if (playerSpeed == 0 && !jumping) {
-            anim.SetInteger("State", 0); // idle
+            anim.SetBool("Run", false); // stop running
         }
 
         rb.velocity = new Vector3(speed, rb.velocity.y, 0);
-
     }
 
     void HandleJumpAndFall() {
@@ -86,7 +87,6 @@ public class PlayerManager : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "GROUND") {
             isGrounded = true;
-            canDoubleJump = false;
             jumping = false; 
             anim.SetInteger("State", 0);
         }
