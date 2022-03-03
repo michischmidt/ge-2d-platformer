@@ -19,13 +19,9 @@ public class PlayerManager : MonoBehaviour {
         facingRight = true;
     }
 
-    public void FixedUpdate() {
-        MovePlayer(speed);                        
-    }
-
     // Update is called once per frame
     void Update() {
-         
+        MovePlayer(speed);  
         HandleJumpAndFall();
         FlipCharacter();
 
@@ -65,12 +61,31 @@ public class PlayerManager : MonoBehaviour {
 
     void HandleJumpAndFall() {
         if (jumping) {
-            // when velocity is postiv -> jumps up, if negativ he starts falling
+            // Handling Jump when velocity is postiv -> 
+            // jumps up, if negativ he starts falling
             if (rb.velocity.y > 0) {
-                anim.SetInteger("State", 3);
+                anim.SetBool("Jump", true);
+                anim.SetBool("Fall", false);
             } else {
-                anim.SetInteger("State", 2);
+                anim.SetBool("Jump", false);
+                anim.SetBool("Fall", true);
             }
+        } else {
+            // Handling freefalling without a jump
+            if (!isGrounded && rb.velocity.y < 0) {
+                anim.SetBool("Fall", true);
+            }
+        }
+    }
+
+    public void Jump() {
+        // handles single jump
+        if (isGrounded) {
+            jumping = true;
+            isGrounded = false;
+            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+            anim.SetBool("Run", false);
+            anim.SetBool("Jump", true);
         }
     }
 
@@ -88,7 +103,8 @@ public class PlayerManager : MonoBehaviour {
         if (other.gameObject.tag == "GROUND") {
             isGrounded = true;
             jumping = false; 
-            anim.SetInteger("State", 0);
+            anim.SetBool("Jump", false);
+            anim.SetBool("Fall", false);
         }
     }
 
@@ -102,15 +118,5 @@ public class PlayerManager : MonoBehaviour {
 
     public void StopMoving() {
         speed = 0;
-    }
-
-    public void Jump() {
-        // handles single jump
-        if (isGrounded) {
-            jumping = true;
-            isGrounded = false;
-            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            anim.SetInteger("State", 3);
-        }
     }
 }
