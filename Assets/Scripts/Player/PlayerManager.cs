@@ -71,7 +71,7 @@ public class PlayerManager : MonoBehaviour {
                 anim.SetBool("Fall", true);
             }
         } else {
-            // Handling freefalling without a jump
+            // TODO: Fix Handling freefalling without a jump
             if (!isGrounded && rb.velocity.y < 0) {
                 anim.SetBool("Fall", true);
             }
