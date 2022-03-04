@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class PlayerCombat : MonoBehaviour {
 
@@ -23,7 +24,8 @@ public class PlayerCombat : MonoBehaviour {
 
     public void Attack() {
         // Play attack animation
-        anim.SetTrigger("SwordAttack");
+        int randInt = new Random().Next(1, 4);
+        anim.SetTrigger("SwordAttack" + randInt.ToString());
 
         // Detect enemy in range
         // Creates cirlce and collects all objects that are hit by it
