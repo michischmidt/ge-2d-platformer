@@ -7,8 +7,13 @@ public class PlayerCombat : MonoBehaviour {
 
     public Animator anim;
     public Transform swordAttackPoint;
-    public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+
+    public float attackRange = 0.5f;
+    public int attackDamage = 1; // Deals one dmg
+
+    public float attackRate = 1f; 
+    float nextAtttackTime = 0f;
 
     // Start is called before the first frame update
     void Start() {
@@ -17,8 +22,11 @@ public class PlayerCombat : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Attack();
+        if (Time.time >= nextAtttackTime) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                Attack();
+                nextAtttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
@@ -32,9 +40,9 @@ public class PlayerCombat : MonoBehaviour {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(swordAttackPoint.position, attackRange, enemyLayers);
 
 
-        // Deal DMG to enemy
+        // Deal DMG to any enemy
         foreach(Collider2D enemy in hitEnemies) {
-            Debug.Log("Hit " + enemy.name);
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
 
