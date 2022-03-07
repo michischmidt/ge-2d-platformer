@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
     public float speedX;
     public float jumpSpeedY;
+    public bool isShooting;
 
-    bool facingRight, jumping, isGrounded, isAttacking;
+    bool facingRight, jumping, isGrounded;
     float speed;
 
     Animator anim;
@@ -14,14 +15,15 @@ public class PlayerManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        anim = GetComponent<Animator> ();
-        rb = GetComponent<Rigidbody2D> ();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         facingRight = true;
+        isShooting = false;
     }
 
     // Update is called once per frame
     void Update() {
-        MovePlayer(speed);  
+        MovePlayer(speed);
         HandleJumpAndFall();
         FlipCharacter();
 
@@ -56,6 +58,11 @@ public class PlayerManager : MonoBehaviour {
             anim.SetBool("Run", false); // stop running
         }
 
+        // handling no horizontal movement while shooting
+        if (!jumping && isShooting) {
+            speed = 0;
+        }
+
         rb.velocity = new Vector3(speed, rb.velocity.y, 0);
     }
 
@@ -80,7 +87,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void Jump() {
         // handles single jump
-        if (isGrounded) {
+        if (isGrounded && !isShooting) {
             jumping = true;
             isGrounded = false;
             rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
