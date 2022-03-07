@@ -21,6 +21,7 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     // Update is called once per frame
+    // TODO: move in func that gets called with btn click
     void Update() {
         if (Time.time >= nextAtttackTime) {
             if (Input.GetKeyDown(KeyCode.Space)) {
