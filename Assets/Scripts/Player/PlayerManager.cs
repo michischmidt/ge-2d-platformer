@@ -92,10 +92,12 @@ public class PlayerManager : MonoBehaviour {
     void FlipCharacter() {
         if (speed > 0 && !facingRight || speed < 0 && facingRight) {
             facingRight = !facingRight;
-            Vector3 temp = transform.localScale;
+            transform.Rotate(0f, 180f, 0f);
 
-            temp.x *= -1;
-            transform.localScale = temp;
+            // OLD char flipping
+            // Vector3 temp = transform.localScale;
+            // temp.x *= -1;
+            // transform.localScale = temp;
         }
     }
 
