@@ -17,7 +17,7 @@ public class PlayerCombat : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        anim = GetComponent<Animator> ();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

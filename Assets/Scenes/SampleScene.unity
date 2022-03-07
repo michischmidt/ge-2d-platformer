@@ -4419,6 +4419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6a42095bed97049af84651d97432f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 2000993095}
   maxHealth: 20
 --- !u!1 &2014788526
 GameObject:
@@ -4831,7 +4832,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c5952a6b10c64764aa1377e4305546d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
