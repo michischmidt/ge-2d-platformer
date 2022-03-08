@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class ParallaxManager : MonoBehaviour {
     
-    private float length, startpos;
-    public GameObject cam;
-    public float parallexEffect;
+    [SerializeField] private Vector2 parallaxEffectMultiplier;
+
+    private Transform cameraTransform;
+    private Vector3 lastCameraPosition;
+    private float textureUnitSizeX;
+    private float textureUnitSizeY;
 
     // Start is called before the first frame update
     void Start() {
-        startpos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        cameraTransform = Camera.main.transform;
+        lastCameraPosition = Vector3.zero;
+        Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+        Texture2D texture = sprite.texture;
     }
 
     // Update is called once per frame
-    void Update() {
-        float temp = (cam.transform.position.x * (1 - parallexEffect));
-        float dist = (cam.transform.position.x * parallexEffect);
-        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
-        if (temp > startpos + length) startpos += length;
-        else if (temp < startpos - length) startpos -= length;
+    void FixedUpdate() {
+        Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
+        transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x, deltaMovement.y * parallaxEffectMultiplier.y);
+        lastCameraPosition = cameraTransform.position;
     }
 }
