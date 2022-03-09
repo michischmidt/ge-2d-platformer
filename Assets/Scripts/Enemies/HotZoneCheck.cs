@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class HotZoneCheck : MonoBehaviour {
     
-    public  Animator anim;
+    public Animator anim;
 
     private EnemyBehaviour enemyParent;
     private bool inRange;
 
     private void Awake() {
         enemyParent = GetComponentInParent<EnemyBehaviour>();
+        anim = GetComponentInParent<Animator>();
     }
 
     private void Update() {
@@ -25,7 +26,7 @@ public class HotZoneCheck : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collider2D collider) {
+    private void OnTriggerExit2D(Collider2D collider) {
         if (collider.gameObject.CompareTag("Player")) {
             inRange = false;
             gameObject.SetActive(false);

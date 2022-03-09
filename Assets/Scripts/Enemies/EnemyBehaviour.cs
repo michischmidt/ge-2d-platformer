@@ -16,8 +16,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public Transform rightLimit;
     [HideInInspector] public Transform target;
     [HideInInspector] public bool inRange;  //Check if Player is in range
-    public GameObject hotZone;
     public GameObject triggerArea;
+    public GameObject hotZone;
     #endregion
 
     #region Private Variables
@@ -27,134 +27,102 @@ public class EnemyBehaviour : MonoBehaviour {
     private float intTimer;
     #endregion
 
-    void Awake()
-    {
+    void Awake() {
         SelectTarget();
         intTimer = timer; //Store the inital value of timer
+        anim = GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        if (!attackMode)
-        {
+    void Update() {
+        if (!attackMode) {
             Move();
         }
 
-        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        {
+        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
             SelectTarget();
         }
 
-        if (inRange)
-        {
+        if (inRange) {
             EnemyLogic();
         }
     }
 
-    void EnemyLogic()
-    {
+    void EnemyLogic() {
         distance = Vector2.Distance(transform.position, target.position);
 
-        if (distance > attackDistance)
-        {
+        if (distance > attackDistance) {
             StopAttack();
-        }
-        else if (attackDistance >= distance && cooling == false)
-        {
+        } else if (attackDistance >= distance && cooling == false) {
             Attack();
         }
 
-        if (cooling)
-        {
+        if (cooling) {
             Cooldown();
             anim.SetBool("Attack", false);
         }
     }
 
-    void Move()
-    {
-        anim.SetBool("canWalk", true);
+    void Move() {
+        anim.SetBool("Walk", true);
 
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        {
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
             Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
 
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
     }
 
-    void Attack()
-    {
+    void Attack() {
         timer = intTimer; //Reset Timer when Player enter Attack Range
         attackMode = true; //To check if Enemy can still attack or not
 
-        anim.SetBool("canWalk", false);
+        anim.SetBool("Walk", false);
         anim.SetBool("Attack", true);
     }
 
-    void Cooldown()
-    {
+    void Cooldown() {
         timer -= Time.deltaTime;
 
-        if (timer <= 0 && cooling && attackMode)
-        {
+        if (timer <= 0 && cooling && attackMode) {
             cooling = false;
             timer = intTimer;
         }
     }
 
-    void StopAttack()
-    {
+    void StopAttack() {
         cooling = false;
         attackMode = false;
         anim.SetBool("Attack", false);
     }
 
-    public void TriggerCooling()
-    {
+    public void TriggerCooling() {
         cooling = true;
     }
 
-    private bool InsideOfLimits()
-    {
+    private bool InsideOfLimits() {
         return transform.position.x > leftLimit.position.x && transform.position.x < rightLimit.position.x;
     }
 
-    public void SelectTarget()
-    {
+    public void SelectTarget() {
         float distanceToLeft = Vector3.Distance(transform.position, leftLimit.position);
         float distanceToRight = Vector3.Distance(transform.position, rightLimit.position);
 
-        if (distanceToLeft > distanceToRight)
-        {
+        if (distanceToLeft > distanceToRight) {
             target = leftLimit;
-        }
-        else
-        {
+        } else {
             target = rightLimit;
         }
-
-        //Ternary Operator
-        //target = distanceToLeft > distanceToRight ? leftLimit : rightLimit;
 
         Flip();
     }
 
-    public void Flip()
-    {
+    public void Flip() {
         Vector3 rotation = transform.eulerAngles;
-        if (transform.position.x > target.position.x) 
-        {
+        if (transform.position.x > target.position.x)  {
             rotation.y = 180;
-        }
-        else
-        {
-            Debug.Log("Twist");
+        } else {
             rotation.y = 0;
         }
-
-        //Ternary Operator
-        //rotation.y = (currentTarget.position.x < transform.position.x) ? rotation.y = 180f : rotation.y = 0f;
 
         transform.eulerAngles = rotation;
     }
