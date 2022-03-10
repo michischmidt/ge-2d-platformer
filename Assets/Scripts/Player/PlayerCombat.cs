@@ -44,7 +44,7 @@ public class PlayerCombat : MonoBehaviour {
 
         // Deal DMG to any enemy
         foreach(Collider2D enemy in hitEnemies) {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            enemy.GetComponentInParent<Enemy>().TakeDamage(attackDamage);
         }
 
         nextAtttackTime = Time.time + 1f / attackRate;

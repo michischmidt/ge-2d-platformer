@@ -341,9 +341,10 @@ GameObject:
   - component: {fileID: 319728249}
   - component: {fileID: 319728248}
   - component: {fileID: 319728251}
+  - component: {fileID: 319728252}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319728247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.82, y: -3.96, z: -20.437757}
+  m_LocalPosition: {x: 11.82, y: -3.96, z: -20.43776}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children:
   - {fileID: 1472148945}
@@ -429,6 +430,22 @@ MonoBehaviour:
   inRange: 0
   triggerArea: {fileID: 2145221414}
   hotZone: {fileID: 1367488257}
+  hurt: 0
+  dying: 0
+--- !u!114 &319728252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319728247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6a42095bed97049af84651d97432f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 319728248}
+  maxHealth: 40
 --- !u!1001 &364309833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -922,7 +939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0700006, y: -0.68000007, z: -10}
+  m_LocalPosition: {x: 4.7499995, y: -2.8300002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 392120627}
@@ -5167,7 +5184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192016132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0700006, y: -0.68000007, z: -10}
+  m_LocalPosition: {x: 4.7499995, y: -2.8300002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1732676557}
@@ -5184,9 +5201,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1204250874}
   - component: {fileID: 1204250875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: collider
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5234,7 +5251,7 @@ GameObject:
   - component: {fileID: 1367488260}
   m_Layer: 0
   m_Name: hotZone
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5334,7 +5351,7 @@ GameObject:
   - component: {fileID: 1472148946}
   m_Layer: 0
   m_Name: sprite
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6475,7 +6492,7 @@ GameObject:
   - component: {fileID: 2065870892}
   m_Layer: 0
   m_Name: hitbox
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6504,7 +6521,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.06846013, y: 0.10201898}
@@ -6622,7 +6639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134089790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07, y: -1.98, z: 0}
+  m_LocalPosition: {x: 4.75, y: -4.13, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 828237986}
@@ -6747,7 +6764,7 @@ GameObject:
   - component: {fileID: 2145221417}
   m_Layer: 0
   m_Name: triggerArea
-  m_TagString: Untagged
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6779,7 +6796,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.30860728, y: -0.05611042}
+  m_Offset: {x: 0.30086485, y: -0.05611042}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6790,7 +6807,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46133998, y: 0.1695656}
+  m_Size: {x: 0.4768248, y: 0.1695656}
   m_EdgeRadius: 0
 --- !u!114 &2145221417
 MonoBehaviour:

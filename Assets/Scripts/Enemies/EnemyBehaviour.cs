@@ -18,6 +18,8 @@ public class EnemyBehaviour : MonoBehaviour {
     [HideInInspector] public bool inRange;  //Check if Player is in range
     public GameObject triggerArea;
     public GameObject hotZone;
+    [HideInInspector] public bool hurt = false;
+    [HideInInspector] public bool dying = false;
     #endregion
 
     #region Private Variables
@@ -34,7 +36,7 @@ public class EnemyBehaviour : MonoBehaviour {
     }
 
     void Update() {
-        if (!attackMode) {
+        if (!attackMode && !hurt && !dying) {
             Move();
         }
 
