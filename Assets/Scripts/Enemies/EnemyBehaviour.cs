@@ -125,5 +125,12 @@ public class EnemyBehaviour : MonoBehaviour {
         }
 
         transform.eulerAngles = rotation;
+        // FlipChildren();
     }
+
+    // private void FlipChildren() {
+    //     for (int i = 0; i < transform.childCount; i++) {
+    //     // transform.GetChild(i).localScale *= -1;
+    //     transform.GetChild(i).Rotate(0f, 180f, 0f);
+    // }
 }
