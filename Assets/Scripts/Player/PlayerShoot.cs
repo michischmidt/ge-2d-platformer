@@ -19,20 +19,22 @@ public class PlayerShoot : MonoBehaviour {
     }
 
     // Update is called once per frame
-    // TODO: move in func that gets called with btn click
     void Update() {
-        if (Time.time >= nextAtttackTime) {
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2")) {
-                Shoot();
-                nextAtttackTime = Time.time + 1f / attackRate;
-            }
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2")) {
+            Shoot();
         }
     }
 
     public void Shoot() {
+        if (Time.time < nextAtttackTime) {
+            return;
+        }
+
         player.isShooting = true;
         anim.SetTrigger("BowAttack");
         StartCoroutine(waitForShootingFinish());
+
+        nextAtttackTime = Time.time + 1f / attackRate;
     }
 
     public IEnumerator waitForShootingFinish() {

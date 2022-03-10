@@ -21,17 +21,18 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     // Update is called once per frame
-    // TODO: move in func that gets called with btn click
     void Update() {
-        if (Time.time >= nextAtttackTime) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                Attack();
-                nextAtttackTime = Time.time + 1f / attackRate;
-            }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Attack();
         }
     }
 
     public void Attack() {
+        // Timeout so player can't spam attack
+        if (Time.time < nextAtttackTime) {
+            return;
+        }
+
         // Play attack animation
         int randInt = new Random().Next(1, 4);
         anim.SetTrigger("SwordAttack" + randInt.ToString());
@@ -45,6 +46,8 @@ public class PlayerCombat : MonoBehaviour {
         foreach(Collider2D enemy in hitEnemies) {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
+
+        nextAtttackTime = Time.time + 1f / attackRate;
     }
 
     // Development function
