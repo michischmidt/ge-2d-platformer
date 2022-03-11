@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour {
     public float speedX;
     public float jumpSpeedY;
     public bool isShooting;
+    public bool isDying = false;
 
     bool facingRight, jumping, isGrounded;
     float speed;
@@ -23,6 +24,7 @@ public class PlayerManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        DeathCheck();
         MovePlayer(speed);
         HandleJumpAndFall();
         FlipCharacter();
@@ -114,6 +116,14 @@ public class PlayerManager : MonoBehaviour {
             jumping = false; 
             anim.SetBool("Jump", false);
             anim.SetBool("Fall", false);
+        }
+    }
+
+    void DeathCheck() {
+        if (isDying) {
+            gameObject.GetComponent<PlayerManager>().enabled = false;
+            gameObject.GetComponent<PlayerCombat>().enabled = false;
+            gameObject.GetComponent<PlayerShoot>().enabled = false;
         }
     }
 

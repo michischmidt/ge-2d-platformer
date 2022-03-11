@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitBoxCheck : MonoBehaviour {
 
-    public PlayerHealth ph;
+    [SerializeField] PlayerHealth ph;
     public int dmg = 1;
 
     private void OnTriggerEnter2D(Collider2D collider) {
