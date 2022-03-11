@@ -18,5 +18,4 @@ public class TriggerAreaCheck : MonoBehaviour {
             enemyParent.hotZone.SetActive(true);
         }
     }
-
 }
