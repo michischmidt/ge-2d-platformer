@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
     public float speedX;
     public float jumpSpeedY;
-    public bool isShooting;
-    public bool isDying = false;
+    [HideInInspector] public bool isShooting;
+    [HideInInspector] public bool isDying = false;
 
     bool facingRight, jumping, isGrounded;
     float speed;
@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour {
         }
 
         // First jumping action, speed in direction = velocity
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded) {
+        if (Input.GetKeyDown(KeyCode.W)) {
             Jump();
         }
     }

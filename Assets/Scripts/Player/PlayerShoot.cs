@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour {
     public PlayerManager player;
 
     public float attackRate = 1f; 
-    float nextAtttackTime = 0f;
+    float nextAttackTime = 0f;
 
     // Start is called before the first frame update
     void Start() {
@@ -20,27 +20,26 @@ public class PlayerShoot : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2")) {
-            Shoot();
-        }
+        // if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2")) {
+        //     Shoot();
+        // }
     }
 
     public void Shoot() {
-        if (Time.time < nextAtttackTime) {
+        if (Time.time < nextAttackTime) {
             return;
         }
 
         player.isShooting = true;
         anim.SetTrigger("BowAttack");
         StartCoroutine(waitForShootingFinish());
-
-        nextAtttackTime = Time.time + 1f / attackRate;
-    }
+    }   
 
     public IEnumerator waitForShootingFinish() {
         //Wait for seconds so animation can play
         yield return new WaitForSecondsRealtime(0.7f);
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         player.isShooting = false;
+        nextAttackTime = Time.time + 1f / attackRate;
     }
 }
