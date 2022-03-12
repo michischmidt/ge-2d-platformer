@@ -7,6 +7,7 @@ TagManager:
   - GROUND
   - ENEMY
   - HOTZONE
+  - HEART
   layers:
   - Default
   - TransparentFX
