@@ -29,20 +29,19 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     public void DamagePlayer (int dmg) {
-        SoundManager.instance.PlaySound(hurtSound);
+        hearts -= dmg;
+
         if (hearts > 1) {
+            SoundManager.instance.PlaySound(hurtSound);
             anim.SetTrigger("Hurt");
-        } else if (hearts == 1) {
+        } else if (hearts <= 0) {
             SoundManager.instance.PlaySound(deathSound);
             player.isDying = true;
             anim.SetTrigger("Died");
             gameOverManager.Setup();
         }
 
-        if (hearts > 0) {
-            hearts -= dmg;
-            heartManager.DrawHearts(hearts, maxHearts);
-        }
+        heartManager.DrawHearts(hearts, maxHearts);
     }
 
     public void HealPlayer (int heal) {

@@ -121,6 +121,8 @@ public class PlayerManager : MonoBehaviour {
 
     void DeathCheck() {
         if (isDying) {
+            // use it if sky is not attached to camera
+            // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             gameObject.GetComponent<PlayerManager>().enabled = false;
             gameObject.GetComponent<PlayerCombat>().enabled = false;
             gameObject.GetComponent<PlayerShoot>().enabled = false;
