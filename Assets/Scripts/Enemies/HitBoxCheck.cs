@@ -5,11 +5,16 @@ using UnityEngine;
 public class HitBoxCheck : MonoBehaviour {
 
     [SerializeField] PlayerHealth ph;
-    public int dmg = 1;
+    public int dmgOrHealth = 0;
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.CompareTag("Player")) {
-            ph.DamagePlayer(dmg);
+            if (dmgOrHealth > 0) {
+                ph.HealPlayer(dmgOrHealth);
+                Destroy(gameObject);
+            } else {
+                ph.DamagePlayer(dmgOrHealth);
+            }
         }
     }
 }

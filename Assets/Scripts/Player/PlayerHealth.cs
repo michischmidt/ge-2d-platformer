@@ -29,7 +29,8 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     public void DamagePlayer (int dmg) {
-        hearts -= dmg;
+        // Plus dmg because dmg is negative, heal is positiv
+        hearts += dmg;
 
         if (hearts > 1) {
             SoundManager.instance.PlaySound(hurtSound);
