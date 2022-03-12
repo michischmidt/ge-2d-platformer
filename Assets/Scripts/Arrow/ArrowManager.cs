@@ -19,6 +19,10 @@ public class ArrowManager : MonoBehaviour {
     }
 
     void OnTriggerEnter2D (Collider2D hitInfo) {
+        if (hitInfo.gameObject.tag == "HOTZONE") {
+            return;
+        }
+
         Enemy enemy = hitInfo.GetComponentInParent<Enemy>();
 
         if (enemy != null) {

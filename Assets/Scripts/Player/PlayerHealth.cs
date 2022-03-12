@@ -7,9 +7,13 @@ public class PlayerHealth : MonoBehaviour {
     public int hearts = 3;
     public int maxHearts = 3;
 
-    [SerializeField] HeartManager hm;
+    [SerializeField] private HeartManager hm;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+
     private Animator anim; 
     private PlayerManager player;
+
     
     // Start is called before the first frame update
     void Start() {
@@ -24,9 +28,11 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     public void DamagePlayer (int dmg) {
+        SoundManager.instance.PlaySound(hurtSound);
         if (hearts > 1) {
             anim.SetTrigger("Hurt");
         } else if (hearts == 1) {
+            SoundManager.instance.PlaySound(deathSound);
             player.isDying = true;
             anim.SetTrigger("Died");
         }

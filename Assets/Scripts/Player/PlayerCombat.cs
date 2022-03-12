@@ -9,6 +9,8 @@ public class PlayerCombat : MonoBehaviour {
     public Transform swordAttackPoint;
     public LayerMask enemyLayers;
 
+    [SerializeField] private AudioClip attackSound;
+
     public float attackRange = 0.5f;
     public int attackDamage = 20;
 
@@ -32,6 +34,8 @@ public class PlayerCombat : MonoBehaviour {
         if (Time.time < nextAtttackTime) {
             return;
         }
+
+        SoundManager.instance.PlaySound(attackSound);
 
         // Play attack animation
         int randInt = new Random().Next(1, 4);

@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour {
     int currentHealth;
     EnemyBehaviour enemyBehaviour;
 
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+
     // Start is called before the first frame update
     void Start() {
         anim = GetComponent<Animator> ();
@@ -28,6 +31,7 @@ public class Enemy : MonoBehaviour {
             StartCoroutine(Die());
         }
         anim.SetTrigger("Hurt");
+        SoundManager.instance.PlaySound(hurtSound);
         StartCoroutine(waitForHurtFinish());
     }
 
@@ -45,6 +49,7 @@ public class Enemy : MonoBehaviour {
         this.enabled = false;
 
         //Wait for seconds so animation can play
+        SoundManager.instance.PlaySound(deathSound);
         yield return new WaitForSecondsRealtime(1.5f);
 
         Destroy(gameObject);

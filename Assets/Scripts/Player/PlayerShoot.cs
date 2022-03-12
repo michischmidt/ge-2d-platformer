@@ -12,6 +12,8 @@ public class PlayerShoot : MonoBehaviour {
     public float attackRate = 1f; 
     float nextAttackTime = 0f;
 
+    [SerializeField] private AudioClip arrowShootSound;
+
     // Start is called before the first frame update
     void Start() {
         anim = GetComponent<Animator>();
@@ -38,6 +40,7 @@ public class PlayerShoot : MonoBehaviour {
     public IEnumerator waitForShootingFinish() {
         //Wait for seconds so animation can play
         yield return new WaitForSecondsRealtime(0.7f);
+        SoundManager.instance.PlaySound(arrowShootSound);
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         player.isShooting = false;
         nextAttackTime = Time.time + 1f / attackRate;

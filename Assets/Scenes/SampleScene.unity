@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 319728252}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: ENEMY
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,6 +446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 319728248}
   maxHealth: 40
+  hurtSound: {fileID: 8300000, guid: 76634c73aae85b54e910d80cee67b114, type: 3}
+  deathSound: {fileID: 8300000, guid: 497f6416ebe7a404ba3efcfa8db10310, type: 3}
 --- !u!1001 &364309833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -785,7 +787,7 @@ RectTransform:
   m_Children:
   - {fileID: 142945417}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -920,6 +922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 559874283}
   - component: {fileID: 559874282}
+  - component: {fileID: 559874284}
   m_Layer: 0
   m_Name: SOUNDMANAGER
   m_TagString: Untagged
@@ -937,11 +940,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7cc13c75907f5c54aa121f1df4357f91, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1037,6 +1040,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &559874284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559874281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6072dbf27d130e747a3e16ed4a7c64da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680707665
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,7 +5086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042708403
 GameObject:
@@ -5107,7 +5122,7 @@ Transform:
   - {fileID: 1658507880}
   - {fileID: 1132376532}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090320387
 GameObject:
@@ -5286,7 +5301,7 @@ Transform:
   m_Children:
   - {fileID: 1732676557}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204250873
 GameObject:
@@ -5300,7 +5315,7 @@ GameObject:
   - component: {fileID: 1204250875}
   m_Layer: 6
   m_Name: collider
-  m_TagString: ENEMY
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5360,7 +5375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346742405}
   m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 15.5363, y: -14.49, z: 35.210938}
+  m_LocalPosition: {x: 15.279, y: -14.49, z: 35.210938}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1042708404}
@@ -5411,7 +5426,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 16.016434, y: 2.16}
+  m_Size: {x: 16.01429, y: 2.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5430,7 +5445,7 @@ GameObject:
   - component: {fileID: 1367488260}
   m_Layer: 0
   m_Name: hotZone
-  m_TagString: ENEMY
+  m_TagString: HOTZONE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5530,7 +5545,7 @@ GameObject:
   - component: {fileID: 1472148946}
   m_Layer: 0
   m_Name: sprite
-  m_TagString: ENEMY
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6330,7 +6345,7 @@ RectTransform:
   - {fileID: 456342090}
   - {fileID: 840778757}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6516,7 +6531,7 @@ GameObject:
   - component: {fileID: 2065870893}
   m_Layer: 0
   m_Name: hitbox
-  m_TagString: ENEMY
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6693,7 +6708,7 @@ Transform:
   - {fileID: 828237986}
   - {fileID: 1449021542}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2134089794
 MonoBehaviour:
@@ -6765,6 +6780,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  attackSound: {fileID: 8300000, guid: a973a147b06425642bb38a8c80d84692, type: 3}
   attackRange: 0.68
   attackDamage: 20
   attackRate: 2
@@ -6784,7 +6800,8 @@ MonoBehaviour:
   firePoint: {fileID: 1449021542}
   bulletPrefab: {fileID: 343335086005420344, guid: 85820cebe03bd4548abbd9e69f15e03d, type: 3}
   player: {fileID: 2134089794}
-  attackRate: 1
+  attackRate: 0.5
+  arrowShootSound: {fileID: 8300000, guid: e9c58b27040692640b93981dc73453f3, type: 3}
 --- !u!114 &2134089799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6800,6 +6817,8 @@ MonoBehaviour:
   hearts: 3
   maxHearts: 3
   hm: {fileID: 142945419}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: ea6541c3fa9a5a04d96914d5c7de7b3d, type: 3}
 --- !u!1 &2145221414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6813,7 +6832,7 @@ GameObject:
   - component: {fileID: 2145221417}
   m_Layer: 0
   m_Name: triggerArea
-  m_TagString: ENEMY
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6845,7 +6864,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.30906248, y: -0.12641014}
+  m_Offset: {x: 0.1818997, y: -0.12641014}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6856,7 +6875,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4932201, y: 0.028966159}
+  m_Size: {x: 0.90787905, y: 0.028966159}
   m_EdgeRadius: 0
 --- !u!114 &2145221417
 MonoBehaviour:
