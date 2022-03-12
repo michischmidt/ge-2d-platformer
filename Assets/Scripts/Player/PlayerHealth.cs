@@ -7,7 +7,8 @@ public class PlayerHealth : MonoBehaviour {
     public int hearts = 3;
     public int maxHearts = 3;
 
-    [SerializeField] private HeartManager hm;
+    [SerializeField] private HeartManager heartManager;
+    [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private AudioClip hurtSound;
     [SerializeField] private AudioClip deathSound;
 
@@ -19,7 +20,7 @@ public class PlayerHealth : MonoBehaviour {
     void Start() {
         player = GetComponent<PlayerManager>();
         anim = GetComponent<Animator>();
-        hm.DrawHearts(hearts, maxHearts);
+        heartManager.DrawHearts(hearts, maxHearts);
     }
 
     // Update is called once per frame
@@ -35,18 +36,19 @@ public class PlayerHealth : MonoBehaviour {
             SoundManager.instance.PlaySound(deathSound);
             player.isDying = true;
             anim.SetTrigger("Died");
+            gameOverManager.Setup();
         }
 
         if (hearts > 0) {
             hearts -= dmg;
-            hm.DrawHearts(hearts, maxHearts);
+            heartManager.DrawHearts(hearts, maxHearts);
         }
     }
 
     public void HealPlayer (int heal) {
         if (hearts < maxHearts) {
             hearts += heal;
-            hm.DrawHearts(hearts, maxHearts);
+            heartManager.DrawHearts(hearts, maxHearts);
         }
     }
 }
