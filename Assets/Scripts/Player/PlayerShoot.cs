@@ -22,6 +22,7 @@ public class PlayerShoot : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        // BUGGY on mobile so commented out
         // if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2")) {
         //     Shoot();
         // }
@@ -35,6 +36,7 @@ public class PlayerShoot : MonoBehaviour {
         player.isShooting = true;
         anim.SetTrigger("BowAttack");
         StartCoroutine(waitForShootingFinish());
+        nextAttackTime = Time.time + 1f / attackRate;
     }   
 
     public IEnumerator waitForShootingFinish() {
@@ -43,6 +45,6 @@ public class PlayerShoot : MonoBehaviour {
         SoundManager.instance.PlaySound(arrowShootSound);
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         player.isShooting = false;
-        nextAttackTime = Time.time + 1f / attackRate;
+        
     }
 }

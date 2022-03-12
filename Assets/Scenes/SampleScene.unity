@@ -942,7 +942,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7cc13c75907f5c54aa121f1df4357f91, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6783,7 +6783,7 @@ MonoBehaviour:
   attackSound: {fileID: 8300000, guid: a973a147b06425642bb38a8c80d84692, type: 3}
   attackRange: 0.68
   attackDamage: 20
-  attackRate: 2
+  attackRate: 1
 --- !u!114 &2134089798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6800,7 +6800,7 @@ MonoBehaviour:
   firePoint: {fileID: 1449021542}
   bulletPrefab: {fileID: 343335086005420344, guid: 85820cebe03bd4548abbd9e69f15e03d, type: 3}
   player: {fileID: 2134089794}
-  attackRate: 0.5
+  attackRate: 1
   arrowShootSound: {fileID: 8300000, guid: e9c58b27040692640b93981dc73453f3, type: 3}
 --- !u!114 &2134089799
 MonoBehaviour:
