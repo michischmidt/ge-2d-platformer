@@ -8,6 +8,7 @@ TagManager:
   - ENEMY
   - HOTZONE
   - HEART
+  - CEELING
   layers:
   - Default
   - TransparentFX
