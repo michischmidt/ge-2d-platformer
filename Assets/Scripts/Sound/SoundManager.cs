@@ -12,6 +12,13 @@ public class SoundManager : MonoBehaviour {
         instance = this;
         source = GetComponent<AudioSource>();
         
+        // Keep this obj even when we got to new scene
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else if (instance != null && instance != this) {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
