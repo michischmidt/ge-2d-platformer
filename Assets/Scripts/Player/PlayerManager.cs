@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
     public float speedX;
     public float jumpSpeedY;
+    public float delayBeforeDoubleJump;
     [HideInInspector] public bool isShooting;
     [HideInInspector] public bool isDying = false;
 
-    bool facingRight, jumping, isGrounded;
+    bool facingRight, jumping, isGrounded, canDoubleJump;
     float speed;
 
     Animator anim;
@@ -95,24 +96,33 @@ public class PlayerManager : MonoBehaviour {
             rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
             anim.SetBool("Run", false);
             anim.SetBool("Jump", true);
+            Invoke("EnableDoubleJump", delayBeforeDoubleJump);
         }
+
+        // handles double jump
+        if (canDoubleJump) {
+            canDoubleJump = false;
+            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+            anim.SetBool("Run", false);
+            anim.SetBool("Jump", true);
+        }
+    }
+
+    void EnableDoubleJump() {
+        canDoubleJump = true;
     }
 
     void FlipCharacter() {
         if (speed > 0 && !facingRight || speed < 0 && facingRight) {
             facingRight = !facingRight;
             transform.Rotate(0f, 180f, 0f);
-
-            // OLD char flipping
-            // Vector3 temp = transform.localScale;
-            // temp.x *= -1;
-            // transform.localScale = temp;
         }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "GROUND") {
             isGrounded = true;
+            canDoubleJump = false;
             jumping = false; 
             anim.SetBool("Jump", false);
             anim.SetBool("Fall", false);

@@ -22,10 +22,9 @@ public class PlayerShoot : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        // BUGGY on mobile so commented out
-        // if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire2")) {
-        //     Shoot();
-        // }
+        if (Input.GetKeyDown(KeyCode.B)) {
+            Shoot();
+        }
     }
 
     public void Shoot() {
