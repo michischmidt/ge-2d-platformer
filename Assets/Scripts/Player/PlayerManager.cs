@@ -100,12 +100,12 @@ public class PlayerManager : MonoBehaviour {
         }
 
         // handles double jump
-        if (canDoubleJump) {
-            canDoubleJump = false;
-            rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            anim.SetBool("Run", false);
-            anim.SetBool("Jump", true);
-        }
+        // if (canDoubleJump) {
+        //     canDoubleJump = false;
+        //     rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+        //     anim.SetBool("Run", false);
+        //     anim.SetBool("Jump", true);
+        // }
     }
 
     void EnableDoubleJump() {

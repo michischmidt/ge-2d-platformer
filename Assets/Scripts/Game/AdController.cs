@@ -17,9 +17,7 @@ public class AdController : MonoBehaviour {
     float timer = 0f;
 
     void Start() {
-        stopTimer = false;
-        timerSlider.maxValue = gameTime;
-        timerSlider.value = gameTime;
+        Setup();
     }
 
     // Update is called once per frame
@@ -40,7 +38,7 @@ public class AdController : MonoBehaviour {
             }
             
             // Enable close button
-            if (timerSlider.value <= 10) {
+            if (timerSlider.value <= 7.5f) {
                 closeButton.SetActive(true);
             }
         }
@@ -59,13 +57,21 @@ public class AdController : MonoBehaviour {
         // freezes game
         // Time.timeScale = 1f;
         gameIsPaused = false;
+        closeButton.SetActive(false);
     }
 
     public void Pause() {
-        timer = 0f;
+        Setup();
         adPanel.SetActive(true);
         // freezes game
         // Time.timeScale = 0f;
         gameIsPaused = true;
+    }
+
+    void Setup() {
+        timer = 0f;
+        stopTimer = false;
+        timerSlider.maxValue = gameTime;
+        timerSlider.value = gameTime;
     }
 }
