@@ -9,6 +9,7 @@ TagManager:
   - HOTZONE
   - HEART
   - CEELING
+  - COIN
   layers:
   - Default
   - TransparentFX
