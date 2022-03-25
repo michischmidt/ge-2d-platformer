@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 1ed713f90fdc07c49bffdbd42f8227f1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6197056623017412966
+    second: Crab_Idle_0
+  - first:
+      213: -7237385891557049259
+    second: Crab_Idle_1
+  - first:
+      213: -6912970443732039809
+    second: Crab_Idle_2
+  - first:
+      213: 1896988559804361465
+    second: Crab_Idle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +113,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Crab_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 16
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6694feb4a2e500650800000000000000
+      internalID: 6197056623017412966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 16
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c715f70e3af8b90800000000000000
+      internalID: -7237385891557049259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 16
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77c39602023010a0800000000000000
+      internalID: -6912970443732039809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 16
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa6e126b05735a10800000000000000
+      internalID: 1896988559804361465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

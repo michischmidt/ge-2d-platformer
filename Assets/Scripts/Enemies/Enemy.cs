@@ -30,9 +30,13 @@ public class Enemy : MonoBehaviour {
         if (currentHealth <= 0) {
             StartCoroutine(Die());
         }
-        anim.SetTrigger("Hurt");
+
         SoundManager.instance.PlaySound(hurtSound);
-        StartCoroutine(waitForHurtFinish());
+
+        if (!enemyBehaviour.attackMode) {
+            anim.SetTrigger("Hurt");
+            StartCoroutine(waitForHurtFinish());
+        }
     }
 
     IEnumerator Die() {

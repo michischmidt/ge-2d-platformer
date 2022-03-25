@@ -20,11 +20,11 @@ public class EnemyBehaviour : MonoBehaviour {
     public GameObject hotZone;
     [HideInInspector] public bool hurt = false;
     [HideInInspector] public bool dying = false;
+    [HideInInspector] public bool attackMode;
     #endregion
 
     #region Private Variables
     private float distance; //Store the distance b/w enemy and player
-    private bool attackMode;
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
     #endregion
