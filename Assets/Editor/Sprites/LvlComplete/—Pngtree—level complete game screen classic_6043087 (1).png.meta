@@ -1,0 +1,432 @@
+fileFormatVersion: 2
+guid: 40a3f15df45c0bc45abb1e1833b209e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3975546061001586993
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_4"
+  - first:
+      213: 7183075660776154523
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_5"
+  - first:
+      213: 6115678675816338398
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_6"
+  - first:
+      213: 2757732788826850941
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_7"
+  - first:
+      213: -6685255066246570333
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_8"
+  - first:
+      213: 839933717124939683
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_9"
+  - first:
+      213: 3670646017533583107
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_10"
+  - first:
+      213: -3501472767200362813
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_11"
+  - first:
+      213: 8529653190542688657
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_12"
+  - first:
+      213: 6715842570321837697
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_13"
+  - first:
+      213: -5912102799026764882
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_14"
+  - first:
+      213: -7179571087144776273
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_15"
+  - first:
+      213: 2180259044465283901
+    second: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_0"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 527
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139f332441afb2730800000000000000
+      internalID: 3975546061001586993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_5"
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 527
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95215381496fa360800000000000000
+      internalID: 7183075660776154523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_6"
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 527
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3d6787a514fd450800000000000000
+      internalID: 6115678675816338398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_7"
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 527
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76c87f3c5f654620800000000000000
+      internalID: 2757732788826850941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_8"
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 527
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae1e7fefe33933a0800000000000000
+      internalID: -6685255066246570333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_9"
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 527
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3affa1cf34b08ab00800000000000000
+      internalID: 839933717124939683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_10"
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 527
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f9a43ea11c0f230800000000000000
+      internalID: 3670646017533583107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_11"
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 527
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce7150e115486fc0800000000000000
+      internalID: -3501472767200362813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_12"
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 527
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191039f726a6f5670800000000000000
+      internalID: 8529653190542688657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_13"
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 441
+        width: 322
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18eba735c37733d50800000000000000
+      internalID: 6715842570321837697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_14"
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 234
+        width: 200
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3ca64f3ddf3fda0800000000000000
+      internalID: -5912102799026764882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_15"
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 233
+        width: 202
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad021f922a0d5c90800000000000000
+      internalID: -7179571087144776273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014level complete game screen classic_6043087 (1)_0"
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 592
+        width: 803
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d339fa7ac06d14e10800000000000000
+      internalID: 2180259044465283901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

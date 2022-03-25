@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class AdController : MonoBehaviour {
 
+    public GameObject lvlCompleteOverlay;
+
     public static bool gameIsPaused = false;
 
     public GameObject adPanel;
@@ -53,6 +55,7 @@ public class AdController : MonoBehaviour {
     }
 
     public void Resume() {
+        SoundManager.instance.UnMuteAllSound();
         adPanel.SetActive(false); 
         // freezes game
         // Time.timeScale = 1f;
@@ -61,6 +64,8 @@ public class AdController : MonoBehaviour {
     }
 
     public void Pause() {
+        SoundManager.instance.MuteAllSound();
+        lvlCompleteOverlay.SetActive(false);
         Setup();
         adPanel.SetActive(true);
         // freezes game

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CoinsCheck : MonoBehaviour {
     public Text coinsText;
     [SerializeField] private AudioClip coinSound;
-    int coinsCount = 0;
+    static int coinsCount = 0;
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.CompareTag("Player")) {

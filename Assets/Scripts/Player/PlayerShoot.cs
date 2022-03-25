@@ -44,6 +44,5 @@ public class PlayerShoot : MonoBehaviour {
         SoundManager.instance.PlaySound(arrowShootSound);
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         player.isShooting = false;
-        
     }
 }

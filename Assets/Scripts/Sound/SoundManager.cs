@@ -25,4 +25,12 @@ public class SoundManager : MonoBehaviour {
     public void PlaySound(AudioClip _sound) {
         source.PlayOneShot(_sound);
     }
+
+    public void MuteAllSound() {
+        AudioListener.volume = 0;
+    }
+
+    public void UnMuteAllSound() {
+        AudioListener.volume = 1;
+    }
 }
