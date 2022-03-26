@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour {
+    [SerializeField] private GemCheck gemCheck;
 
     public void Setup() {
         gameObject.SetActive(true);
@@ -11,5 +12,6 @@ public class GameOverManager : MonoBehaviour {
 
     public void RestartButton() {
         SceneManager.LoadScene("SampleScene");
+        gemCheck.IncrementDeathCounter();
     }
 }
