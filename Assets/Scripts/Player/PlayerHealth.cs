@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] private HeartManager heartManager;
     [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip healSound;
     [SerializeField] private AudioClip deathSound;
 
     private Animator anim; 
@@ -46,6 +47,7 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     public void HealPlayer (int heal) {
+        SoundManager.instance.PlaySound(healSound);
         if (hearts < maxHearts) {
             hearts += heal;
             heartManager.DrawHearts(hearts, maxHearts);

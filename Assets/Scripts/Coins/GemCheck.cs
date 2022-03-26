@@ -18,6 +18,7 @@ public class GemCheck : MonoBehaviour {
     public IEnumerator waitForBanner() {
         //Wait for seconds so animation can play
         yield return new WaitForSecondsRealtime(3f);
+        lvlCompleteOverlay.SetActive(false);
         adController.Pause();
         Destroy(gameObject);
     }

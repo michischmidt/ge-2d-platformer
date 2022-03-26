@@ -80,11 +80,6 @@ public class PlayerManager : MonoBehaviour {
                 anim.SetBool("Jump", false);
                 anim.SetBool("Fall", true);
             }
-        } else {
-            // TODO: Fix Handling freefalling without a jump
-            if (!isGrounded && rb.velocity.y < 0) {
-                anim.SetBool("Fall", true);
-            }
         }
     }
 
@@ -120,7 +115,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "CEELING") {
+        if (other.gameObject.tag == "GROUND") {
             isGrounded = true;
             canDoubleJump = false;
             jumping = false; 

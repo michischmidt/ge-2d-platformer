@@ -36,6 +36,8 @@ public class Enemy : MonoBehaviour {
         if (!enemyBehaviour.attackMode) {
             anim.SetTrigger("Hurt");
             StartCoroutine(waitForHurtFinish());
+        } else {
+            enemyBehaviour.hurt = false;
         }
     }
 

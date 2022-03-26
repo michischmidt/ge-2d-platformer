@@ -8,6 +8,10 @@ public class CoinsCheck : MonoBehaviour {
     [SerializeField] private AudioClip coinSound;
     static int coinsCount = 0;
 
+    void Start() {
+        coinsCount = 0;
+    }
+
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.CompareTag("Player")) {
             SoundManager.instance.PlaySound(coinSound);
