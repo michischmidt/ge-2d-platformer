@@ -115,7 +115,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "GROUND") {
+        if (other.gameObject.tag == "CEELING") {
             isGrounded = true;
             canDoubleJump = false;
             jumping = false; 

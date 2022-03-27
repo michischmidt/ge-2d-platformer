@@ -11,7 +11,7 @@ public class GameOverManager : MonoBehaviour {
     }
 
     public void RestartButton() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("SampleScenePositive");
         gemCheck.IncrementDeathCounter();
     }
 }
