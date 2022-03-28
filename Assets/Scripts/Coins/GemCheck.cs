@@ -27,7 +27,7 @@ public class GemCheck : MonoBehaviour {
 
             playTimeText.text = "Playtime: " + TimeSpan.FromSeconds(playTimeSeconds).Minutes + ":" + TimeSpan.FromSeconds(playTimeSeconds).Seconds;
             lvlCompleteOverlay.SetActive(true);
-            StartCoroutine(waitForBanner());
+            // StartCoroutine(waitForBanner());
         }
     }
 
