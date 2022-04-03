@@ -80,6 +80,11 @@ public class PlayerManager : MonoBehaviour {
                 anim.SetBool("Jump", false);
                 anim.SetBool("Fall", true);
             }
+        } else if (isGrounded) {
+            if (rb.velocity.y != 0 && rb.velocity.x == 0) {
+                anim.SetBool("Jump", false);
+                anim.SetBool("Fall", true);
+            }
         }
     }
 
@@ -91,7 +96,7 @@ public class PlayerManager : MonoBehaviour {
             rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
             anim.SetBool("Run", false);
             anim.SetBool("Jump", true);
-            Invoke("EnableDoubleJump", delayBeforeDoubleJump);
+            // Invoke("EnableDoubleJump", delayBeforeDoubleJump);
         }
 
         // handles double jump
@@ -115,7 +120,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "CEELING") {
+        if (other.gameObject.tag == "GROUND") {
             isGrounded = true;
             canDoubleJump = false;
             jumping = false; 

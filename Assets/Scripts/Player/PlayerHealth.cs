@@ -15,21 +15,21 @@ public class PlayerHealth : MonoBehaviour {
 
     private Animator anim; 
     private PlayerManager player;
-
+    private bool dead;
     
     // Start is called before the first frame update
     void Start() {
         player = GetComponent<PlayerManager>();
         anim = GetComponent<Animator>();
         heartManager.DrawHearts(hearts, maxHearts);
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
+        dead = false;
     }
 
     public void DamagePlayer (int dmg) {
+        if (dead) {
+            return;
+        }
+
         // Plus dmg because dmg is negative, heal is positiv
         hearts += dmg;
 
@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour {
             player.isDying = true;
             anim.SetTrigger("Died");
             gameOverManager.Setup();
+            dead = true;
         }
 
         heartManager.DrawHearts(hearts, maxHearts);

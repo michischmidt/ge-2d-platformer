@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GemCheck : MonoBehaviour {
     [SerializeField] private AudioClip lvlCompleteSound;
@@ -14,6 +15,12 @@ public class GemCheck : MonoBehaviour {
     static int deathCounter = 0;
     static float timer = 0.0f;
     static int playTimeSeconds = 0;
+
+    Scene scene;
+
+    void Start() {
+        scene = SceneManager.GetActiveScene();
+    }
 
     void Update() {
         timer += Time.deltaTime;
@@ -27,7 +34,11 @@ public class GemCheck : MonoBehaviour {
 
             playTimeText.text = "Playtime: " + TimeSpan.FromSeconds(playTimeSeconds).Minutes + ":" + TimeSpan.FromSeconds(playTimeSeconds).Seconds;
             lvlCompleteOverlay.SetActive(true);
-            // StartCoroutine(waitForBanner());
+
+            // Only show ad in positve case
+            if (scene.name == "SampleScenePositive") {
+                StartCoroutine(waitForBanner());
+            }
         }
     }
 
@@ -36,8 +47,7 @@ public class GemCheck : MonoBehaviour {
         yield return new WaitForSecondsRealtime(3f);
         lvlCompleteOverlay.SetActive(false);
         adController.Pause();
-        // Destroy(gameObject);
-        yield return new WaitForSecondsRealtime(15f);
+        yield return new WaitForSecondsRealtime(10f);
         lvlCompleteOverlay.SetActive(true);
     }
 

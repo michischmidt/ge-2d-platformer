@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Script structure was taken from "Sid Makes Games"
+// Script structure / Code was taken from "Sid Makes Games"
 // https://drive.google.com/file/d/1MJSLczbbWJNuTifJ3a7StfDrwR_EzZs-/view
 
 public class EnemyBehaviour : MonoBehaviour {
@@ -85,7 +85,7 @@ public class EnemyBehaviour : MonoBehaviour {
     void Cooldown() {
         timer -= Time.deltaTime;
 
-        if (timer <= 0 && cooling && attackMode) {
+        if (timer <= 0 && cooling) {
             cooling = false;
             timer = intTimer;
         }

@@ -9,12 +9,13 @@ public class AdController : MonoBehaviour {
     public GameObject adPanel;
     public Slider timerSlider;
     public GameObject closeButton;
-    public float gameTime;
+    float gameTime;
 
     private bool stopTimer;
     float timer = 0f;
 
     void Start() {
+        gameTime = 10f;
         Setup();
     }
 
@@ -36,9 +37,9 @@ public class AdController : MonoBehaviour {
             }
             
             // Enable close button
-            if (timerSlider.value <= 7.5f) {
-                closeButton.SetActive(true);
-            }
+            // if (timerSlider.value <= 7.5f) {
+            //     closeButton.SetActive(true);
+            // }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
