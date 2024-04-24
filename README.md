@@ -1,3 +1,7 @@
 # ge-2d-platformer
 
-TODO: credit all taken sprites
+Unity Game Jump & Run game for a study which investigates the user experience in combination with game mechanics.
+
+
+
+
